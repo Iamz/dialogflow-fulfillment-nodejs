@@ -456,15 +456,15 @@ class V2Agent {
    * @private
    */
   convertQuickRepliesJson_(messageJson, platform) {
-    if (!messageJson.suggestions) return null;
-    let suggestions = [];
-    messageJson.suggestions.forEach((consoleMessageJson, iterator) => {
-      suggestions.push(new Suggestion({
+    if (!messageJson.quickReplies) return null;
+    let quickReplies = [];
+    messageJson.quickReplies.quickReplies.forEach((consoleMessageJson, iterator) => {
+      quickReplies.push(new Suggestion({
         title: messageJson.quickReplies.quickReplies[iterator],
         platform: platform,
       }));
     });
-    return suggestions;
+    return quickReplies;
   }
 
   /**
